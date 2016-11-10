@@ -1,6 +1,4 @@
-﻿#include "Graph.h"
-#include "InputReader.h"
-using namespace std;
+#include <header.h>
 void Graph::Print(){
 	Vertex *showVertex = gHead;
 	while (showVertex)
