@@ -1,5 +1,4 @@
-﻿#include "Graph.h"
-#include "InputReader.h"
+﻿#include "Header.h"
 
 bool Graph::RemoveVertex(Vertex* v)
 {
