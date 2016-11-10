@@ -6,7 +6,7 @@
 struct List{
 	Node* data;
 	List* pNext;
-};
+};// dùng cho việc tạo Queue hỗ trợ bài E7, E8
 void E1();
 void E2();
 void E3();
