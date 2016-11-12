@@ -50,15 +50,16 @@ Heap Heap::ArrayToHeap(int* arr, int length){
 	heap.heapPtr = new int[HEAP_MAX];
 	for (int i = 0; i < length; i++) {
 		if (!heap.DataExist(arr[i])) {
-			heap.heapPtr[i] = arr[i];
+			heap.size++;
+			heap.heapPtr[heap.size-1] = arr[i];
+			if (heap.size == HEAP_MAX) {
+				break;
+			}
 		}
 	}
-	for (int i = 0; i < length; i++) {
-		if (i == HEAP_MAX) {
-			break;
-		}
+
+	for (int i = 0; i < heap.size; i++) {
 		heap.ReHeapUp(i);
-		heap.size++;
 		heap.last++;
 	}
 	return heap;
@@ -97,7 +98,7 @@ bool Heap::IsFull() {
 
 void Heap::PrintHeapLinear() {
 	for (int i = 0; i < size; i++) {
-		cout << heapPtr[0] << " ";
+		cout << heapPtr[i] << " ";
 	}
 	cout << endl;
 }
@@ -158,4 +159,8 @@ bool Heap::DeleteHeap(int &dataOut) {
 		ReHeapDown(0);
 	}
 	return true;
+}
+
+int Heap::GetSize() {
+	return size;
 }

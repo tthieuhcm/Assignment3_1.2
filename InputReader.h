@@ -15,7 +15,9 @@
 using namespace std;
 
 bool ReadArrayInput(string filename, int*& arr, int& count);
+
 bool ReadArrayInputOfGraph(string filename, int*& vertexDataArr, int& vertexCount, int**& edgeDataArr, int& edgeCount);
+
 bool ReadAdjacencyMat(string filename, int**& mat, int& count);
 
 #endif

@@ -120,7 +120,11 @@ public:
 	* \return \c false if Heap is empty
 	*/
 	bool DeleteHeap(int& dataOut);
-
+	
+	/**
+	* \brief Return the size of the Heap
+	*/
+	int GetSize();
 };
 
 #endif
