@@ -57,11 +57,4 @@ void E12()
 		}
 		cout << endl;
 	}
-
-	// delete
-	//while (!avlTree.IsEmpty())
-	//	avlTree.AVLDelete(avlTree.root->data);
-	//delete[]arr;
-	//delete[]Arr;
-	//system("pause");
 }
