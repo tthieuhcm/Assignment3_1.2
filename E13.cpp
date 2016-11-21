@@ -31,8 +31,4 @@ void E13()
 		}
 		cout << endl;
 	}
-
-	// delete
-	//delete[]arr;
-	//system("pause");
 }
