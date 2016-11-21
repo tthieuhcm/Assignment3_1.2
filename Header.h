@@ -3,6 +3,7 @@
 #include"Heap.h"
 #include"Node.h"
 #include"InputReader.h"
+#include"myGraph.h"
 struct List{
 	Node* data;
 	List* pNext;
@@ -17,3 +18,6 @@ void E7();
 void E8();
 void E9();
 void E10();
+void E14();
+void E15();
+void E16();
