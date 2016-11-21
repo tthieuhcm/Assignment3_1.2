@@ -1,4 +1,4 @@
-﻿#include "Header.h"
+#include "Header.h"
 
 void E11()
 {
@@ -16,24 +16,22 @@ void E11()
 	// print graph
 	graph.Print();
 
-	// In ma trận liền kề
-	cout << "Ma tran lien ke cua graph:\n";
-	cout << setw(5)   << right <<"|";
-	Vertex* show = graph.gHead;
-	while (show)
+	// Chuyển graph về ma trận liền kề
+	int **matran = new int*[vertexCount+1];
+	for (int i = 0; i < vertexCount+1; i++)
+		*(matran+i) = new int[vertexCount+1];
+	matran[0][0] = -1;
+	int i = 1;
+	Vertex *add = graph.gHead;
+	while (add)
 	{
-		cout << setw(4) << left << show->data << right << "|";
-		show = show->nextVertex;
-	}
-	cout << endl;
-	show = graph.gHead;
-	while (show)
-	{
-		cout << setw(4) << left << show->data << right << "|";
+		matran[0][i] = add->data;
+		matran[i][0] = add->data;
 		Vertex *check = graph.gHead;
+		int j = 1;
 		while (check)
 		{
-			Edge *edge = show->firstEdge;
+			Edge *edge = add->firstEdge;
 			bool Has = false;
 			while (edge)
 			{
@@ -44,15 +42,22 @@ void E11()
 				}
 				edge = edge->nextEdge;
 			}
-			if (Has) cout << setw(4) << left << 1 << right << "|";
-			else cout << setw(4) << left << 0 << right << "|";
+			if (Has) matran[i][j] = 1;
+			else matran[i][j] = 0;
 			check = check->nextVertex;
+			j++;
 		}
-		cout << endl;
-		show = show->nextVertex;
+		add = add->nextVertex;
+		i++;
 	}
 
-	// delete
-	/*while (graph.gHead)
-		graph.RemoveVertex(graph.gHead);*/
+	// In ma trận liền kề
+	cout << "Ma tran lien ke cua graph:\n";
+	cout << setw(5) << right << "|";
+	for (int i = 0; i < vertexCount + 1; i++)
+	{
+		for (int j = 0; j < vertexCount + 1; j++)
+		if (i != 0 || j != 0) cout << setw(4) << left << matran[i][j] << right << "|";
+		cout << endl;
+	}
 }
