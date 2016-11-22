@@ -45,20 +45,18 @@ void E12()
 	for (int i = 0; i < count; i++)
 	{
 		matran[0][i + 1] = Arr[i];
+		matran[i + 1][0] = Arr[i];
 		Node *find;
 		FindNode(avlTree.root, Arr[i], find);
 
-		for (int j = 0; j < count + 1; j++)
+		for (int j = 0; j < count; j++)
 		{
-			if(j == 0) matran[i + 1][j] = Arr[i];
-			else
-			{
-				bool Has = false;
-				if ((find->left && find->left->data == Arr[j-1]) || (find->right && find->right->data == Arr[j-1]))
-					Has = true;
-				if (Has) matran[i + 1][j] = 1;
-				else matran[i + 1][j] = 0;
-			}
+			bool Has = false;
+			if ((find->left && find->left->data == Arr[j]) || (find->right && find->right->data == Arr[j]))
+				Has = true;
+			if (Has) matran[i + 1][j+1] = 1;
+			else matran[i + 1][j+1] = 0;
+
 		}
 	}
 
