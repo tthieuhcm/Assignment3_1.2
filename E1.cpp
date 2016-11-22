@@ -1,5 +1,5 @@
 #include"Header.h"
-
+//Nhập số phần tử, tạo mảng, thêm phần tử vào mảng, tạo và in cây AVL
 void E1(){
 	int n; int* arr;
 	cout << "Nhap n: ";
