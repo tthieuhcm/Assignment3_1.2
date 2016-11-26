@@ -7,6 +7,7 @@ void E2(){
 	int del = -1; // biến chứa giá trị node cần xóa
 	ReadArrayInput("E2.txt",arr,count);
 	AVLTree tree = AVLTree::ArrayToAVL(arr,count);
+	tree.PrintAVL();
 	do{
 		cout << "Nhap gia tri node can xoa: ";
 		cin >> del;
