@@ -4,6 +4,8 @@
 #include"Node.h"
 #include"InputReader.h"
 #include"myGraph.h"
+#include<iomanip>
+#include <conio.h>
 struct List{
 	Node* data;
 	List* pNext;
