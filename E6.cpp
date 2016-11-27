@@ -74,8 +74,7 @@ bool Graph::RemoveEdge(Vertex* from, Vertex* to)
 		Edge *Previous = findVertex->firstEdge;
 		while (Previous->nextEdge != findEdge)
 			Previous = Previous->nextEdge;
-		if (!findEdge->nextEdge) Previous->nextEdge = NULL;
-		else Previous->nextEdge = findEdge->nextEdge;
+		Previous->nextEdge = findEdge->nextEdge;
 		delete findEdge; 
 	}
 	return true;
@@ -121,11 +120,14 @@ void E6(){
 	do{
 		cout << "Nhap data Vertex can xoa: ";
 		cin >> Vertexdata;
-		if (!graph.RemoveVertex(Vertexdata)) cout << "Khong the remove" << endl;
-		else
+		if (Vertexdata != -1)
 		{
-			cout << "******************************\n" << "Cay nhi phan hien hanh:\n";
-			graph.Print();
+			if (!graph.RemoveVertex(Vertexdata)) cout << "Khong the remove" << endl;
+			else
+			{
+				cout  << "Cay nhi phan hien hanh:\n";
+				graph.Print();
+			}
 		}
 	} while (Vertexdata != -1);
 }
