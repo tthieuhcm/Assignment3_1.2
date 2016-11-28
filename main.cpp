@@ -27,7 +27,7 @@ void main(){
 			default: cout << "Lenh khong ton tai.\n";
 		}
 		cin.ignore();
-		cout << "Ban co muon dung chuong trinh ? Nhan Y/y de ket thuc chuong trinh.";
+		cout << "\nBan co muon dung chuong trinh ? Nhan Y/y de ket thuc chuong trinh.";
 		c = getch();
 		system("cls");
 	}
