@@ -5,6 +5,8 @@
 #include"InputReader.h"
 #include <iomanip>
 #include <list>
+#include <conio.h>
+#include"myGraph.h"
 #define INFINITY 2147483647
 struct List{
 	Node* data;
