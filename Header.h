@@ -87,5 +87,8 @@ void E12();
 void E13();
 void E14();
 void E15();
+void E16();
+void E17();
 void E18();
 void E19();
+void E20();
