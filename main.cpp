@@ -24,6 +24,10 @@ void main(){
 			case 14: E14(); break;
 			case 15: E15(); break;
 			case 16: E16(); break;
+			case 17: E17(); break;
+			case 18: E18(); break;
+			case 19: E19(); break;
+			case 20: E20(); break;
 			default: cout << "Lenh khong ton tai.\n";
 		}
 		cin.ignore();
