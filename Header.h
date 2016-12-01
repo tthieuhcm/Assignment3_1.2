@@ -3,6 +3,7 @@
 #include"Heap.h"
 #include"Node.h"
 #include"InputReader.h"
+#include "myGraph.h"
 #include <iomanip>
 #include <list>
 #define INFINITY 2147483647

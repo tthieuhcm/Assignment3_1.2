@@ -21,7 +21,7 @@ void E16() {
 
 	// xu li(Duyet DFS tu dinh dau tien,  luu tat ca cac dinh da duyet qua, neu so dinh bang so dinh trong do thi-1 thi se co duong di tu v den tat ca cac dinh)
 	//****
-	list tempList;
+	_List tempList;
 	graph.DFS(graph.gHead, tempList, insert);
 	if (tempList.size == graph.size)
 		isStrongConnect = true;
@@ -47,7 +47,7 @@ void E16() {
 		reverseGraph.InsertEdge(_redgeDataArr[i][0], _redgeDataArr[i][1]);
 	reverseGraph.Print();
 
-	list tempreList;
+	_List tempreList;
 	reverseGraph.DFS(reverseGraph.gHead, tempreList, insert);
 	
 	if (tempreList.size == graph.size)

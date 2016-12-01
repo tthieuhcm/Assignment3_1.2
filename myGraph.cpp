@@ -271,7 +271,7 @@ void myGraph::Print() {
 }
 
 // Duyet DFS
-void myGraph::DFS(myVertex* v,list& templist, void(*func)(list&,int))
+void myGraph::DFS(myVertex* v,_List& templist, void(*func)(_List&,int))
 {
 	if (v == nullptr||v->processed==1)
 		return;
@@ -300,7 +300,7 @@ myVertex* myGraph::at(int i){
 }
 
 // ham insert vao link list
-void insert(list& tempList, int data) {
+void insert(_List& tempList, int data) {
 	if (tempList.pHead == nullptr) {
 		node* tempNode = new node;
 		tempNode->data = data;

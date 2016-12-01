@@ -23,9 +23,9 @@ public:
 	node* pNext;
 
 };
-class list {
+class _List {
 public:
-	list() :pHead(nullptr) { size = 0; };
+	_List() :pHead(nullptr) { size = 0; };
 	node* pHead;
 	int size;
 
@@ -248,7 +248,7 @@ public:
 	/**
 	* \brief DFS
 	*/
-	void DFS(myVertex* v,list&,void(*func)(list&,int));
+	void DFS(myVertex* v,_List&,void(*func)(_List&,int));
 
 
 	//
@@ -256,7 +256,7 @@ public:
 };
 
 
-void insert(list&, int);
+void insert(_List&, int);
 bool ReadArrayInputOfReverseGraph(string filename, int*& vertexDataArr, int& vertexCount, int**& edgeDataArr, int& edgeCount);
 bool ReadLKGraph(string filename, int**& vertexDataArr, int& vertexCount);
 #endif

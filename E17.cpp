@@ -3,8 +3,8 @@ void printAVLGraph(myVertex* v, int indent);
 bool checkAVL(myVertex* v, bool& isAVL);
 int heightOfTree(myVertex* v, bool& isAVL);
 bool checkThuTu(myVertex* v);
-void LNR(myVertex* v, list& templist, void(*func)(list&, int));
-bool checkLNR_AVL(myVertex* v, list& templist);
+void LNR(myVertex* v, _List& templist, void(*func)(_List&, int));
+bool checkLNR_AVL(myVertex* v, _List& templist);
 void E17() {
 	bool boo=true;
 	int** vertexDataArr = nullptr;
@@ -85,7 +85,7 @@ void E17() {
 	}
 	if (vHead != nullptr&&boo == true) {
 	// xu li duong di tu diem goc den tat ca cac dinh => Co duong di tu dinh goc den tat ca dinh
-		list tempList;
+		_List tempList;
 		graph.DFS(vHead, tempList, insert);
 		int dem=0;// so cac dinh ma vHead co duong di
 		node* tempNode = tempList.pHead;
@@ -99,7 +99,7 @@ void E17() {
 	}
 	// xu li thu tu cac dinh! cac dinh duoc duyet LNR co gia tri tang dan
 	if (vHead != nullptr&&boo == true){
-		list list;
+		_List list;
 		boo = checkLNR_AVL(vHead, list); //
 	}
 	
@@ -191,7 +191,7 @@ int heightOfTree(myVertex* v,bool& isAVL) {
 	}
 }
 
-bool checkLNR_AVL(myVertex* v, list& templist){
+bool checkLNR_AVL(myVertex* v, _List& templist){
 	LNR(v, templist, insert);
 	node* p = templist.pHead;
 	if (p == nullptr)
@@ -204,7 +204,7 @@ bool checkLNR_AVL(myVertex* v, list& templist){
 	return true;
 }
 //duyet cay theo thu tu giua
-void LNR(myVertex* v, list& templist, void(*func)(list&, int)){
+void LNR(myVertex* v, _List& templist, void(*func)(_List&, int)){
 	if (v == nullptr )
 		return;
 
