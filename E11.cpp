@@ -1,10 +1,10 @@
-#include "Header.h"
+﻿#include "Header.h"
 
 void E11()
 {
 	int *arr = NULL;
 	int *vertexDataArr, vertexCount, **edgeDataArr, edgeCount;
-	ReadArrayInputOfGraph("E11.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
+	ReadArrayInputOfGraph("input/E11.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
 
 	//create graph
 	Graph graph;
@@ -16,22 +16,24 @@ void E11()
 	// print graph
 	graph.Print();
 
-	// Chuyển graph về ma trận liền kề
-	int **matran = new int*[vertexCount+1];
-	for (int i = 0; i < vertexCount+1; i++)
-		*(matran+i) = new int[vertexCount+1];
-	matran[0][0] = -1;
-	int i = 1;
-	Vertex *add = graph.gHead;
-	while (add)
+	// In ma trận liền kề
+	cout << "Ma tran lien ke cua graph:\n";
+	cout << setw(5) << right << "|";
+	Vertex* show = graph.gHead;
+	while (show)
 	{
-		matran[0][i] = add->data;
-		matran[i][0] = add->data;
+		cout << setw(4) << left << show->data << right << "|";
+		show = show->nextVertex;
+	}
+	cout << endl;
+	show = graph.gHead;
+	while (show)
+	{
+		cout << setw(4) << left << show->data << right << "|";
 		Vertex *check = graph.gHead;
-		int j = 1;
 		while (check)
 		{
-			Edge *edge = add->firstEdge;
+			Edge *edge = show->firstEdge;
 			bool Has = false;
 			while (edge)
 			{
@@ -42,22 +44,15 @@ void E11()
 				}
 				edge = edge->nextEdge;
 			}
-			if (Has) matran[i][j] = 1;
-			else matran[i][j] = 0;
+			if (Has) cout << setw(4) << left << 1 << right << "|";
+			else cout << setw(4) << left << 0 << right << "|";
 			check = check->nextVertex;
-			j++;
 		}
-		add = add->nextVertex;
-		i++;
+		cout << endl;
+		show = show->nextVertex;
 	}
 
-	// In ma trận liền kề
-	cout << "Ma tran lien ke cua graph:\n";
-	cout << setw(5) << right << "|";
-	for (int i = 0; i < vertexCount + 1; i++)
-	{
-		for (int j = 0; j < vertexCount + 1; j++)
-		if (i != 0 || j != 0) cout << setw(4) << left << matran[i][j] << right << "|";
-		cout << endl;
-	}
+	// delete
+	/*while (graph.gHead)
+	graph.RemoveVertex(graph.gHead);*/
 }

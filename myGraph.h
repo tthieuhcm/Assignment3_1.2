@@ -55,6 +55,8 @@ class myEdge;
 
 class myVertex {
 public:
+	// phuc vu cho kiem tra cay AVL
+	int height;
 	/**
 	* \var data
 	* \brief Vertex data
@@ -247,10 +249,14 @@ public:
 	* \brief DFS
 	*/
 	void DFS(myVertex* v,list&,void(*func)(list&,int));
+
+
+	//
+	myVertex* at(int i);
 };
 
 
 void insert(list&, int);
 bool ReadArrayInputOfReverseGraph(string filename, int*& vertexDataArr, int& vertexCount, int**& edgeDataArr, int& edgeCount);
-
+bool ReadLKGraph(string filename, int**& vertexDataArr, int& vertexCount);
 #endif

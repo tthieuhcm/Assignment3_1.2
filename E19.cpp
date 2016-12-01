@@ -12,7 +12,7 @@ void E19()
 	ReadAdjacencyMat(filename, mat, count);		//read input
 	AdjacencyMattoGraph(mat, count, graph);		//Covert Adjacency Matrix to Graph
 	graph.Print();								//print graph
-	cout << "Input from begining vertex and destination vertex in (0," << count + 1 << ")" << endl;;
+	cout << "Input begining vertex and destination vertex in (0," << count + 1 << ")" << endl;;
 	cout << "From: ";
 	cin >> _from;
 	cout << "To: ";

@@ -1,5 +1,4 @@
-#include "Header.h"
-
+﻿#include "Header.h"
 int *AVLtoArray(AVLTree tree, int *arr, int &count)
 {
 	if (!tree.root) return arr;
@@ -20,12 +19,11 @@ void FindNode(Node *root, int data, Node *&find)
 	if (root->left) FindNode(root->left, data, find);
 	if (root->right) FindNode(root->right, data, find);
 }
-
 void E12()
 {
 	int *arr;
 	int count;
-	ReadArrayInput("E12.txt", arr, count);
+	ReadArrayInput("input/E12.txt", arr, count);
 	AVLTree avlTree;
 	avlTree = AVLTree::ArrayToAVL(arr, count);
 	cout << endl << "Cay AVL hien hanh: " << endl;
@@ -36,16 +34,16 @@ void E12()
 	count = 0;
 	AVLtoArray(avlTree, Arr, count);
 
-	// Chuyển cây AVL về ma trận liền kề
-	int **matran = new int*[count + 1];
-	for (int i = 0; i < count + 1; i++)
-		*(matran + i) = new int[count + 1];
+	// In ma trận liền kề
+	cout << "Ma tran lien ke cua AVLtree:\n";
+	cout << setw(5) << right << "|";
+	for (int i = 0; i < count;i++)
+		cout << setw(4) << left << Arr[i] << right << "|";
+	cout << endl;
 
-	matran[0][0] = -1;
 	for (int i = 0; i < count; i++)
 	{
-		matran[0][i + 1] = Arr[i];
-		matran[i + 1][0] = Arr[i];
+		cout << setw(4) << left << Arr[i] << right << "|";
 		Node *find;
 		FindNode(avlTree.root, Arr[i], find);
 
@@ -54,19 +52,9 @@ void E12()
 			bool Has = false;
 			if ((find->left && find->left->data == Arr[j]) || (find->right && find->right->data == Arr[j]))
 				Has = true;
-			if (Has) matran[i + 1][j+1] = 1;
-			else matran[i + 1][j+1] = 0;
-
+			if (Has) cout << setw(4) << left << 1 << right << "|";
+			else cout << setw(4) << left << 0 << right << "|";
 		}
-	}
-
-	// In ma trận liền kề
-	cout << "Ma tran lien ke cua AVLtree:\n";
-	cout << setw(5) << right << "|";
-	for (int i = 0; i < count + 1; i++)
-	{
-		for (int j = 0; j < count + 1; j++)
-		if (i != 0 || j != 0) cout << setw(4) << left << matran[i][j] << right << "|";
 		cout << endl;
 	}
 }

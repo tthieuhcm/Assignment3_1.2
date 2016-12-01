@@ -3,7 +3,7 @@
 void E8(){
 	int* arr;
 	int count;
-	ReadArrayInput("E8.txt",arr,count);
+	ReadArrayInput("input/E8.txt",arr,count);
 	Heap tree = Heap::ArrayToHeap(arr,count);
 	tree.PrintHeapTree();
 	int walk = 0;

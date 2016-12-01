@@ -3,7 +3,7 @@
 void E7(){
 	int* arr;
 	int count;
-	ReadArrayInput("E7.txt",arr,count);
+	ReadArrayInput("input/E7.txt",arr,count);
 	AVLTree tree = AVLTree::ArrayToAVL(arr,count);
 	tree.PrintAVL();
 

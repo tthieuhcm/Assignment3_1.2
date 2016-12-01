@@ -19,7 +19,7 @@ Vertex::Vertex() {
 	nextVertex = NULL;
 	inDegree = 0;
 	outDegree = 0;
-	processed = false;
+	processed = 0;
 	firstEdge = NULL;
 }
 
@@ -28,7 +28,7 @@ Vertex::Vertex(int _data) {
 	nextVertex = NULL;
 	inDegree = 0;
 	outDegree = 0;
-	processed = false;
+	processed = 0;
 	firstEdge = NULL;
 }
 

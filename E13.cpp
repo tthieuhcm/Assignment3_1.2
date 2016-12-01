@@ -1,10 +1,10 @@
-#include "Header.h"
+﻿#include "Header.h"
 
 void E13()
 {
 	int *arr = NULL;
 	int count;
-	ReadArrayInput("E8.txt", arr, count);
+	ReadArrayInput("input/E13.txt", arr, count);
 	Heap heap;
 	heap = Heap::ArrayToHeap(arr, count);
 	cout << "Cay Heap hien hanh: " << endl;
@@ -26,10 +26,10 @@ void E13()
 		for (int j = 0; j < count; j++)
 		{
 			bool Has = false;
-			if ((j != 0 || i != 0) && ((j - 1) / 2 == i || (i-1)/2 == j))
+			if ((j != 0 || i != 0) && ((j - 1) / 2 == i || (i - 1) / 2 == j))
 				Has = true;
-			if (Has) matran[i + 1][j+1] = 1;
-			else matran[i + 1][j+1] = 0;
+			if (Has) matran[i + 1][j + 1] = 1;
+			else matran[i + 1][j + 1] = 0;
 		}
 	}
 

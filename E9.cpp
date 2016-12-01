@@ -14,7 +14,7 @@ void AVLtoGraph(AVLTree tree, Graph &graph){
 void E9(){
 	int* arr;
 	int count;
-	ReadArrayInput("E9.txt",arr,count);
+	ReadArrayInput("input/E9.txt",arr,count);
 	AVLTree tree = AVLTree::ArrayToAVL(arr,count);
 	tree.PrintAVL();
 

@@ -9,7 +9,7 @@ void E16() {
 	int vertexCount;
 	int **edgeDataArr;
 	int edgeCount;
-	ReadArrayInputOfGraph("E16.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
+	ReadArrayInputOfGraph("input/E16.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
 
 	//create graph
 	myGraph graph;
@@ -37,7 +37,7 @@ void E16() {
 	int _rvertexCount;
 	int **_redgeDataArr;
 	int _redgeCount;
-	ReadArrayInputOfReverseGraph("E16.txt", _rvertexDataArr, _rvertexCount, _redgeDataArr, _redgeCount);
+	ReadArrayInputOfReverseGraph("input/E16.txt", _rvertexDataArr, _rvertexCount, _redgeDataArr, _redgeCount);
 
 	//create graph
 	myGraph reverseGraph;

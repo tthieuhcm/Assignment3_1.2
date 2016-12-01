@@ -10,7 +10,7 @@ void E14() {
 	int vertexCount;
 	int **edgeDataArr;
 	int edgeCount;
-	ReadArrayInputOfGraph("E14.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
+	ReadArrayInputOfGraph("input/E14.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
 
 	//create graph
 	myGraph graph;

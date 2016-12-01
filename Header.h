@@ -5,8 +5,6 @@
 #include"InputReader.h"
 #include <iomanip>
 #include <list>
-#include <conio.h>
-#include"myGraph.h"
 #define INFINITY 2147483647
 struct List{
 	Node* data;
@@ -31,7 +29,7 @@ class VertexW :public Vertex
 public:
 	EdgeW* firstEdgeW;
 	VertexW* nextVertexW;
-	int dist;	
+	int dist;			//Distance used while finding shortest path
 	VertexW* path;		//Vertex that goes before it in a path.
 
 	VertexW();

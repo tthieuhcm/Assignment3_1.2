@@ -22,7 +22,7 @@ void E5(){
 	int vertexCount;
 	int **edgeDataArr;
 	int edgeCount;
-	ReadArrayInputOfGraph("E5.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
+	ReadArrayInputOfGraph("input/E5.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
 
 	//create graph
 	Graph graph;

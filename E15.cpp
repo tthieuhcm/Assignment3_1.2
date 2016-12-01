@@ -1,37 +1,11 @@
 #include "Header.h"
 
-bool ReadLKGraph(string filename, int**& vertexDataArr, int& vertexCount) {
-	ifstream myfile(filename.c_str());
-	string line;
-	vertexCount = 0;
-	vertexDataArr = NULL;
-	cout << "Reading Graph data: \n";
-	if (myfile.is_open()) {
-		//Read vertex count on the first line
-		myfile >> vertexCount;
 
-		//Create an array to store the data
-		vertexDataArr = new int*[vertexCount];
-
-		//Read them one by one
-		for (int i = 0; i < vertexCount; i++) {
-			vertexDataArr[i] = new int[vertexCount];
-			for (int j = 0; j < vertexCount; j++) {
-				myfile >> vertexDataArr[i][j];
-			}
-		}
-	}
-	else {
-		cout << "Can't open file " << filename << ".";
-		return false;
-	}
-	return true;
-}
 void E15(){
 	int** vertexDataArr = nullptr;
 	int vertexCount = 0;
 	// Input
-	ReadLKGraph("E15.txt", vertexDataArr, vertexCount);
+	ReadLKGraph("input/E15.txt", vertexDataArr, vertexCount);
 	cout << "MA TRAN" << endl;
 	for (int i = 0; i < vertexCount; i++) {
 		for (int j = 0; j < vertexCount; j++)

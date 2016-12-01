@@ -88,9 +88,9 @@ public:
 
 	/**
 	* \var processed
-	* \brief For traversal purpose, tell us if a node has been visited or not. \n
+	* \brief For traversal purpose, tell us if a node was pushed in the processing stack or not. \n
 	*/
-	bool processed;
+	int processed;
 
 	/**
 	* \brief Default constructor. \n Create a Vertex with data=0

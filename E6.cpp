@@ -74,7 +74,8 @@ bool Graph::RemoveEdge(Vertex* from, Vertex* to)
 		Edge *Previous = findVertex->firstEdge;
 		while (Previous->nextEdge != findEdge)
 			Previous = Previous->nextEdge;
-		Previous->nextEdge = findEdge->nextEdge;
+		if (!findEdge->nextEdge) Previous->nextEdge = NULL;
+		else Previous->nextEdge = findEdge->nextEdge;
 		delete findEdge; 
 	}
 	return true;
@@ -87,7 +88,7 @@ bool Graph::RemoveEdge(int fromData, int toData)
 		from = from->nextVertex;
 	Vertex *to = gHead;
 	while (to->data != toData)
-		to = to->nextVertex;
+		to = from->nextVertex;
 	if (!from || !to) return false;
 	if (Graph::RemoveEdge(from, to)) return true;
 	return false;
@@ -105,7 +106,7 @@ void E6(){
 	int vertexCount;
 	int **edgeDataArr;
 	int edgeCount;
-	ReadArrayInputOfGraph("E6.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
+	ReadArrayInputOfGraph("input/E6.txt", vertexDataArr, vertexCount, edgeDataArr, edgeCount);
 
 	//create graph
 	Graph graph;
@@ -120,14 +121,11 @@ void E6(){
 	do{
 		cout << "Nhap data Vertex can xoa: ";
 		cin >> Vertexdata;
-		if (Vertexdata != -1)
+		if (!graph.RemoveVertex(Vertexdata)) cout << "Khong the remove" << endl;
+		else
 		{
-			if (!graph.RemoveVertex(Vertexdata)) cout << "Khong the remove" << endl;
-			else
-			{
-				cout  << "Cay nhi phan hien hanh:\n";
-				graph.Print();
-			}
+			cout << "******************************\n" << "Cay nhi phan hien hanh:\n";
+			graph.Print();
 		}
 	} while (Vertexdata != -1);
 }

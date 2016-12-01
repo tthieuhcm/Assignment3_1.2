@@ -1,11 +1,11 @@
-
-#include "myGraph.h"
+﻿#include "myGraph.h"
 
 //***************************//
 //myVertex class implementation//
 //***************************//
 
 myVertex::myVertex() {
+	height = 0;
 	data = 0;
 	nextVertex = NULL;
 	inDegree = 0;
@@ -15,6 +15,7 @@ myVertex::myVertex() {
 }
 
 myVertex::myVertex(int _data) {
+	height = 0;
 	data = _data;
 	nextVertex = NULL;
 	inDegree = 0;
@@ -287,6 +288,17 @@ void myGraph::DFS(myVertex* v,list& templist, void(*func)(list&,int))
 	}
 }
 
+myVertex* myGraph::at(int i){
+	int d = i;
+	myVertex* v = gHead;
+	while (d>0)
+	{
+		v = v->nextVertex;
+		d--;
+	}
+	return v;
+}
+
 // ham insert vao link list
 void insert(list& tempList, int data) {
 	if (tempList.pHead == nullptr) {
@@ -355,3 +367,34 @@ bool ReadArrayInputOfReverseGraph(string filename, int*& vertexDataArr, int& ver
 	}
 	return true;
 }
+
+
+//Read LK Graph
+bool ReadLKGraph(string filename, int**& vertexDataArr, int& vertexCount) {
+	ifstream myfile(filename.c_str());
+	string line;
+	vertexCount = 0;
+	vertexDataArr = NULL;
+	cout << "Reading Graph data: \n";
+	if (myfile.is_open()) {
+		//Read vertex count on the first line
+		myfile >> vertexCount;
+
+		//Create an array to store the data
+		vertexDataArr = new int*[vertexCount];
+
+		//Read them one by one
+		for (int i = 0; i < vertexCount; i++) {
+			vertexDataArr[i] = new int[vertexCount];
+			for (int j = 0; j < vertexCount; j++) {
+				myfile >> vertexDataArr[i][j];
+			}
+		}
+	}
+	else {
+		cout << "Can't open file " << filename << ".";
+		return false;
+	}
+	return true;
+}
+
