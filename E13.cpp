@@ -4,14 +4,11 @@ void E13()
 {
 	int *arr = NULL;
 	int count;
-	ReadArrayInput("input/E13.txt", arr, count);
+	ReadArrayInput("E8.txt", arr, count);
 	Heap heap;
 	heap = Heap::ArrayToHeap(arr, count);
 	cout << "Cay Heap hien hanh: " << endl;
-
-	// In heap
 	heap.PrintHeapTree();
-
 
 	// Chuyển heap về ma trận liền kề
 	int **matran = new int*[count + 1];
@@ -39,7 +36,7 @@ void E13()
 	for (int i = 0; i < count + 1; i++)
 	{
 		for (int j = 0; j < count + 1; j++)
-		if (i != 0 || j != 0) cout << setw(4) << left << matran[i][j] << right << "|";
+			if (i != 0 || j != 0) cout << setw(4) << left << matran[i][j] << right << "|";
 		cout << endl;
 	}
 }
