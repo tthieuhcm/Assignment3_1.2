@@ -121,11 +121,14 @@ void E6(){
 	do{
 		cout << "Nhap data Vertex can xoa: ";
 		cin >> Vertexdata;
-		if (!graph.RemoveVertex(Vertexdata)) cout << "Khong the remove" << endl;
-		else
+		if (Vertexdata != -1)
 		{
-			cout << "******************************\n" << "Cay nhi phan hien hanh:\n";
-			graph.Print();
+			if (!graph.RemoveVertex(Vertexdata)) cout << "Khong the remove" << endl;
+			else
+			{
+				cout  << "Cay nhi phan hien hanh:\n";
+				graph.Print();
+			}
 		}
 	} while (Vertexdata != -1);
 }
