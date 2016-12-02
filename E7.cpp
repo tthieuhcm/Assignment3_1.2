@@ -7,7 +7,7 @@ void E7(){
 	int count;
 	ReadArrayInput("input/E7.txt",arr,count);
 	AVLTree tree = AVLTree::ArrayToAVL(arr,count);
-	tree.PrintAVL();/	
+	tree.PrintAVL();
 //
 //Duyet Breadth First Search
 //bien front la 1 queue
