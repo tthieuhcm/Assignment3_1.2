@@ -1,12 +1,15 @@
 #include"Header.h"
 
 void E8(){
-	int* arr;
+//tao Heap
+        int* arr;
 	int count;
 	ReadArrayInput("input/E8.txt",arr,count);
 	Heap tree = Heap::ArrayToHeap(arr,count);
 	tree.PrintHeapTree();
-	int walk = 0;
+//vi Heap la cay gan day du nen vi tri cac phan tu trong 1 hang la xac dinh
+//1 phan tu thuoc hang thu Row thi có vi tri < 2^Row
+        int walk = 0;
 	int row = 1;
 	int sum = 0;
 	while (walk < count){
