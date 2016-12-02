@@ -88,7 +88,7 @@ bool Graph::RemoveEdge(int fromData, int toData)
 		from = from->nextVertex;
 	Vertex *to = gHead;
 	while (to->data != toData)
-		to = from->nextVertex;
+		to = to->nextVertex;
 	if (!from || !to) return false;
 	if (Graph::RemoveEdge(from, to)) return true;
 	return false;
