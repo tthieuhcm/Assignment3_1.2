@@ -4,8 +4,9 @@ void E2(){
 	int count;
 	int del = -1;
 	ReadArrayInput("input/E2.txt",arr,count);
-	AVLTree tree = AVLTree::ArrayToAVL(arr,count);
-	do{
+	AVLTree tree = AVLTree::ArrayToAVL(arr,count);	
+        tree.PrintAVL();	
+        do{
 		cout << "Nhap gia tri node can xoa: ";
 		cin >> del;
 		if (del != -1) {
